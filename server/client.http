@@ -1,0 +1,16 @@
+# Variables
+@baseurl = http://localhost:3333
+
+### 
+
+# Post check language
+# @name @check
+POST {{baseurl}}/check/rust
+Accept: application/json
+Content-Type: application/json
+
+{
+    "snippet": "this is a description"
+}
+
+###
