@@ -5,12 +5,12 @@
 
 # Post check language
 # @name @check
-POST {{baseurl}}/check/rust
+POST {{baseurl}}/check/typescript
 Accept: application/json
 Content-Type: application/json
 
 {
-    "snippet": "this is a description"
+    "snippet": "2 + 2"
 }
 
 ###

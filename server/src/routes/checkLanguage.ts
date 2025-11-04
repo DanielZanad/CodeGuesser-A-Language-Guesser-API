@@ -2,6 +2,7 @@ import { type FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import z from "zod";
 import { SupportedLanguagesSchema } from "../utils/types/language-supported.ts";
 import { match } from "assert";
+import { Typescript } from "../parsers/typescript/typescript.ts";
 
 export const checkLanguage: FastifyPluginAsyncZod = async (app) => {
   app.post(
@@ -21,6 +22,7 @@ export const checkLanguage: FastifyPluginAsyncZod = async (app) => {
       const { snippet } = req.body;
       switch (language) {
         case "typescript": {
+          Typescript.run(snippet);
           res.status(200).send("typescript");
           break;
         }
